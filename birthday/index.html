@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Running Birthday Party</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<div class="main-container">
+			<section class="pokemon-container">
+				<div class="container pika">
+					<div class="pika-head">
+						<div class="pika-head-face">
+							<div class="pika-eye pika-eye-left"></div>
+							<div class="pika-eye pika-eye-right"></div>
+							<div class="pika-nose"></div>
+							<div class="pika-mouth"></div>
+						</div>
+						<div class="pika-ear pika-ear-left"></div>
+						<div class="pika-ear pika-ear-right"></div>
+					</div>
+					<div class="pika-body">
+						<div class="pika-body-body"></div>
+						<div class="pika-arm pika-arm-left"></div>
+						<div class="pika-arm pika-arm-right"></div>
+						<div class="pika-leg pika-leg-left"></div>
+						<div class="pika-leg pika-leg-right"></div>
+						<div class="pika-tail"></div>
+						<div class="strings">
+							<div class="string"></div>
+							<div class="string"></div>
+						</div>
+					</div>
+					<div class="balloons">
+						<div class="balloon cyan">
+							<div class="string"></div>
+						</div>
+						<div class="balloon red">
+							<div class="string"></div>
+						</div>
+						<div class="balloon pink">
+							<div class="string"></div>
+						</div>
+						<div class="balloon blue">
+							<div class="string"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="content-container">
+				<header>
+					<h1>ジュリッサ Juli's Birthday</h1>
+					<p>Running Birthday Party</p>
+				</header>
+				<nav>
+					<ul>
+						<li class="tab-link active" data-tab="informacion">Información</li>
+						<li class="tab-link" data-tab="ruta">Ruta</li>
+						<li class="tab-link" data-tab="kit">Kit</li>
+					</ul>
+				</nav>
+				<div id="informacion" class="tab-content active">
+					<h2>Información</h2>
+					<ul>
+						<li><strong>Fecha:</strong> 22 de Junio, 2024</li>
+						<li><strong>Hora:</strong> 7:00 AM</li>
+						<li>
+							<strong>Lugar:</strong>
+							<a
+								href="https://maps.app.goo.gl/WnEYXS9gwBpixWqH6"
+								target="_blank"
+							>
+								Amateur Coffee & Run Club
+							</a>
+						</li>
+						<li><strong>Ruta:</strong> 5 km</li>
+						<li>
+							<strong>Puntos de Reunión:</strong> Entrada principal de Amateur
+							Coffee
+						</li>
+						<li>
+							<strong>Dress Code:</strong> Algo relacionado con Pokémon :3 (No
+							obligatorio)
+						</li>
+					</ul>
+				</div>
+				<div id="ruta" class="tab-content">
+					<h2>Ruta</h2>
+					<div class="map-container">
+						<div
+							class="strava-embed-placeholder"
+							data-embed-type="route"
+							data-embed-id="3197244822132827492"
+							data-full-width="true"
+							data-style="dark"
+							data-from-embed="false"
+						></div>
+						<script src="https://strava-embeds.com/embed.js"></script>
+					</div>
+				</div>
+				<div id="kit" class="tab-content">
+					<h2>Kit</h2>
+					<ul>
+						<li>Número de corredor</li>
+						<li>Medalla simbolica (no es mucho, pero es un trabajo honesto)</li>
+					</ul>
+
+					<div class="kit-container">
+						<img src="./image.jpg" alt="Kit del corredor" width="50%" />
+					</div>
+					<p>* Imagen generada por IA</p>
+				</div>
+				<footer>
+					<p>
+						&copy; 2024 Running Birthday Party. Todos los derechos reservados.
+					</p>
+				</footer>
+			</section>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const tabs = document.querySelectorAll('.tab-link');
+				const contents = document.querySelectorAll('.tab-content');
+
+				tabs.forEach((tab) => {
+					tab.addEventListener('click', () => {
+						tabs.forEach((t) => t.classList.remove('active'));
+						tab.classList.add('active');
+
+						contents.forEach((content) => content.classList.remove('active'));
+						document.getElementById(tab.dataset.tab).classList.add('active');
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
